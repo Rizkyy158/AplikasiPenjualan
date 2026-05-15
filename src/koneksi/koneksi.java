@@ -12,7 +12,7 @@ public class koneksi {
             System.out.println("gagal koneksi" + ex);
         }
 
-        String url = "jdbc:mysql://localhost/penjualan";
+        String url = "jdbc:mysql://localhost/aplikasi_penjualan";
 
         try {
             koneksi = DriverManager.getConnection(url, "root", "");
