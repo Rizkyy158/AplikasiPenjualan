@@ -48,9 +48,11 @@ public class Barang extends javax.swing.JFrame {
     String cariitem = txtcari.getText();
 
     try {
-        String sql = "SELECT * FROM barang WHERE id_barang LIKE '%"+cariitem+"%' or nama_barang like '%"+cariitem+"%' order by id_barang asc";
-            Statement stat = conn.prepareStatement(sql);
-            ResultSet hasil = stat.executeQuery(sql);
+        String sql = "SELECT * FROM barang WHERE id_barang LIKE ? OR nama_barang LIKE ? ORDER BY id_barang ASC"; 
+            PreparedStatement stat = conn.prepareStatement(sql);
+            stat.setString(1, "%" + cariitem + "%");
+            stat.setString(2, "%" + cariitem + "%");
+            ResultSet hasil = stat.executeQuery();
 
         while (hasil.next()) {
             tabmode.addRow(new Object[]{
@@ -331,9 +333,10 @@ public class Barang extends javax.swing.JFrame {
     private void bhapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bhapusActionPerformed
         int ok = JOptionPane.showConfirmDialog(null,"hapus","konfirmasi dialog",JOptionPane.YES_NO_OPTION);
         if (ok==0){
-            String sql = "delete from pelanggan where id ='"+txtid.getText()+"'";
+            String sql = "delete from barang where id_barang =?";
             try{
                 PreparedStatement stat = conn.prepareStatement(sql);
+                stat.setString(1, txtid.getText());
                 stat.executeUpdate();
                 JOptionPane.showMessageDialog(null, "data berhasil dihapus");
                 kosong();
