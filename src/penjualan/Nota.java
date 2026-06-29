@@ -641,18 +641,18 @@ private DefaultTableModel tabmode;
     private void bbatalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bbatalActionPerformed
         kosong();
         aktif();
-        autonumber();        // TODO add your handling code here:
+        autonumber();
     }//GEN-LAST:event_bbatalActionPerformed
 
     private void bkeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bkeluarActionPerformed
-        dispose();        // TODO add your handling code here:
+        dispose();
     }//GEN-LAST:event_bkeluarActionPerformed
 
     private void bhapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bhapusActionPerformed
         int index = tbltransaksi.getSelectedRow();
         tabmode.removeRow(index);
         tbltransaksi.setModel(tabmode);
-        hitung();        // TODO add your handling code here:
+        hitung();
     }//GEN-LAST:event_bhapusActionPerformed
 
     private void txtttotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtttotalActionPerformed
@@ -663,7 +663,7 @@ private DefaultTableModel tabmode;
         popuppelanggan Pp = new popuppelanggan();
         Pp.plgn = this;
         Pp.setVisible(true);
-        Pp.setResizable(false);// TODO add your handling code here:
+        Pp.setResizable(false);
     }//GEN-LAST:event_bcaripActionPerformed
 
     private void bcarip1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bcarip1ActionPerformed

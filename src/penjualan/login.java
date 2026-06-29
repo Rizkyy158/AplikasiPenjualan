@@ -9,7 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import koneksi.koneksi;
-import penjualan.Nota;    // sesuaikan package
+import penjualan.Nota;
 import penjualan.UserID;
 public class login extends javax.swing.JFrame {
     private final Connection conn = new koneksi().connect();
@@ -114,7 +114,8 @@ public class login extends javax.swing.JFrame {
             if (rs.next()) {
                 UserID.setUserLogin(rs.getString("nmkasir"));
                 UserID.setIdKasir(rs.getString("id_kasir"));
-                new Nota().setVisible(true);
+                JOptionPane.showMessageDialog(this, "Berhasil Login! Selamat Datang " + rs.getString("nmkasir"));
+                new Menu().setVisible(true);
                 this.dispose();
             } else {
                 JOptionPane.showMessageDialog(this, "Username atau password salah!");
